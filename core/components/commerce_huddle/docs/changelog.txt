@@ -1,0 +1,3 @@
+CommerceHuddle 0.0.1
+====================================
+    - Integration between Huddle and Commerce from Modmore

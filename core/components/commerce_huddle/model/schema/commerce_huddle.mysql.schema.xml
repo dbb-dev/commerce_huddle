@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="commerce_huddle" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" version="1.1">
+    <object class="HuddleOrder" table="huddle_order" extends="comSimpleObject" >
+        <field key="order" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+        <field key="status" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
+        <field key="created_on" formatter="datetime" dbtype="int" precision="20" phptype="int" null="false" default="0" />
+        <field key="submitted_on" formatter="datetime" dbtype="int" precision="20" phptype="int" null="false" default="0" />
+        <field key="error_on" formatter="datetime" dbtype="int" precision="20" phptype="int" null="false" default="0" />
+        <field key="error_log" dbtype="text" phptype="string" null="true"/>
+
+        <aggregate alias="Order" class="comOrder" local="order" foreign="id" cardinality="one" owner="foreign" />
+
+        <index alias="order" name="order" primary="false" unique="false" type="BTREE">
+            <column key="order" length="" collation="A" null="false" />
+        </index>
+
+        <index alias="status" name="status" primary="false" unique="false" type="BTREE">
+            <column key="status" length="" collation="A" null="false" />
+        </index>
+        <index alias="created_on" name="created_on" primary="false" unique="false" type="BTREE">
+            <column key="created_on" length="" collation="A" null="false" />
+        </index>
+        <index alias="submitted_on" name="submitted_on" primary="false" unique="false" type="BTREE">
+            <column key="submitted_on" length="" collation="A" null="false" />
+        </index>
+    </object>
+    <object class="HuddleShipment" extends="comOrderShipment" />
+    <object class="HuddleCreateShipmentAction" extends="comStatusChangeAction" />
+</model>

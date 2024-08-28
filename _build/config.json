@@ -1,0 +1,23 @@
+{
+  "name": "Commerce_Huddle",
+  "lowCaseName": "commerce_huddle",
+  "description": "A Huddle integration for Commerce.",
+  "author": "DBB",
+  "version": "0.0.1-beta",
+  "package": {
+    "menus": [],
+    "elements": {
+      "snippets": []
+    },
+    "systemSettings": []
+  },
+  "database": {},
+  "build": {
+    "resolver": {
+      "after": [
+        "resolver.loadmodule.php",
+        "resolver.tables.php"
+      ]
+    }
+  }
+}

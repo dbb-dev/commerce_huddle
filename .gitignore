@@ -1,0 +1,7 @@
+extra/_build/build.config.php
+extra/config.core.php
+.idea
+.settings
+.vscode
+nbproject
+.project
